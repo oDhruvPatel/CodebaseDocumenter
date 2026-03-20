@@ -37,8 +37,10 @@ function App() {
   return (
     <main className="app-container" ref={mainRef}>
       <Navbar />
-      <Hero />
-      <RepositoryInput />
+      <div className="hero-main-container">
+        <Hero />
+        <RepositoryInput />
+      </div>
     </main>
   );
 }

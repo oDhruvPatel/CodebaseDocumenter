@@ -13,8 +13,8 @@ const Hero: React.FC = () => {
           Clarity for Every<br />Codebase.
         </h1>
         <p className="hero-description">
-          Stop struggling with messy, undocumented legacy code. Our AI-powered<br />
-          system ensures a smooth understanding process, leaving your<br />
+          Stop struggling with messy, undocumented legacy code. Our AI-powered
+          system ensures a smooth understanding process, leaving your
           developers satisfied and boosting your brand's reputation.
         </p>
       </div>

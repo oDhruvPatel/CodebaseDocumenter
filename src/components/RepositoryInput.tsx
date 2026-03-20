@@ -1,13 +1,13 @@
 import React from 'react';
 import { Github } from 'lucide-react';
 import './RepositoryInput.css';
-import meadowImg from '../assets/meadow.png';
+import meadowSvg from '../assets/meadow.svg';
 
 const RepositoryInput: React.FC = () => {
   return (
     <section className="repo-section">
       <div className="repo-container">
-        <div className="meadow-card" style={{ backgroundImage: `url(${meadowImg})` }}>
+        <div className="meadow-card" style={{ backgroundImage: `url(${meadowSvg})` }}>
           <div className="input-overlay">
             <div className="input-group">
               <div className="input-wrapper">

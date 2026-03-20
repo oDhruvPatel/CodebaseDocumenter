@@ -1,6 +1,6 @@
 .hero {
-  padding-top: 11vh;
-  padding-bottom: 2vh;
+  padding-top: 0;
+  padding-bottom: 0;
   text-align: center;
   flex: 0 0 auto;
 }
@@ -22,7 +22,7 @@
   border-radius: var(--radius-full);
   font-size: 0.8rem;
   font-weight: 600;
-  margin-bottom: 2vh;
+  margin-bottom: 1.5vh;
   cursor: pointer;
   transition: var(--transition);
 }
@@ -42,17 +42,17 @@
   font-size: clamp(1rem, 2.2vh, 1.125rem);
   line-height: 1.5;
   max-width: 700px;
-  margin: 0 auto 2vh auto;
+  margin: 0 auto 1.5vh auto;
   font-weight: 500;
 }
 
 @media (max-width: 640px) {
   .hero {
-    padding-top: 8vh;
+    padding-top: 4vh;
   }
 
   .hero-title {
-    font-size: clamp(2rem, 12vw, 3.5rem);
+    font-size: clamp(1.8rem, 10vw, 3rem);
   }
 }
 

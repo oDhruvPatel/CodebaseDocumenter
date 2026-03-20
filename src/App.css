@@ -5,3 +5,13 @@
   background-color: var(--background);
   overflow: hidden;
 }
+
+.hero-main-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 0;
+  overflow: hidden;
+}
