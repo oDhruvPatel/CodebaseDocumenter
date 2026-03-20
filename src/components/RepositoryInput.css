@@ -1,0 +1,151 @@
+.repo-section {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  min-height: 0;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.repo-container {
+  width: 100%;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.meadow-card {
+  flex: 1;
+  min-height: 200px;
+  max-height: 48vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center bottom;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+
+  /* The Gradient Mask / Edge Feathering */
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+}
+
+.meadow-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to top, rgba(248, 250, 252, 0.4), transparent);
+  pointer-events: none;
+}
+
+.input-overlay {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5vh;
+  width: 100%;
+  max-width: 600px;
+  padding: 0 1.5rem;
+}
+
+.input-group {
+  display: flex;
+  background: white;
+  padding: 0.45rem;
+  border-radius: var(--radius-full);
+  width: 100%;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+.input-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding-left: 1.25rem;
+  gap: 0.6rem;
+}
+
+.github-icon {
+  color: var(--text-muted);
+}
+
+.repo-input {
+  width: 100%;
+  font-size: 1rem;
+  color: var(--text-main);
+  background: transparent;
+  font-weight: 500;
+}
+
+.analyze-btn {
+  background: var(--primary);
+  color: white;
+  padding: 0.8rem 1.75rem;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 0.9375rem;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(60, 179, 113, 0.25);
+  transition: var(--transition);
+}
+
+.analyze-btn:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(60, 179, 113, 0.35);
+}
+
+.footer-note {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 640px) {
+  .input-overlay {
+    max-width: 100%;
+  }
+
+  .input-group {
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 0.4rem;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+  }
+
+  .input-wrapper {
+    padding-left: 0.75rem;
+  }
+
+  .repo-input {
+    font-size: 0.875rem;
+  }
+
+  .analyze-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.8125rem;
+  }
+
+  .meadow-card {
+    border-radius: 0;
+    max-height: 40vh;
+  }
+}
