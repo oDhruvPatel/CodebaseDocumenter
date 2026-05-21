@@ -1,0 +1,35 @@
+# Core API
+fastapi
+uvicorn
+
+# Git cloning
+gitpython
+
+# Environment variables
+python-dotenv
+
+# Google Gemini LLM
+google-generativeai
+langchain-google-genai
+
+# LangChain
+langchain
+langchain-community
+
+# PDF handling
+PyPDF2
+
+# Vector store
+faiss-cpu
+
+# AWS S3
+boto3
+
+# Redis caching
+redis
+
+# HTTP requests
+requests
+
+# Data validation
+pydantic
