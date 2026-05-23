@@ -6,7 +6,7 @@ Codebase Documenter is an AI-powered tool that automatically generates comprehen
 
 - **Instant Documentation**: Generate documentation for any public GitHub repository with a single click.
 - **AI-Powered Analysis**: Utilizes LLMs (Google Gemini) and LangChain to understand code context and semantics.
-- **Vector Search Ready**: Chunks and embeds code using FAISS for efficient similarity search and contextual understanding.
+- **Vector Search Ready**: Chunks and embeds code using ChromaDB for efficient similarity search and contextual understanding.
 - **Modern UI**: Clean, responsive, and minimalistic frontend built with React and Vite.
 - **FastAPI Backend**: High-performance asynchronous backend for handling repository cloning and processing pipelines.
 
@@ -19,7 +19,7 @@ Codebase Documenter is an AI-powered tool that automatically generates comprehen
 ### Backend
 - **Framework**: FastAPI & Uvicorn
 - **AI & NLP**: LangChain, Google Generative AI (Gemini)
-- **Vector Store**: FAISS (Facebook AI Similarity Search)
+- **Vector Store**: ChromaDB
 - **Tools**: GitPython (Repository Cloning), PyPDF2 (Document processing)
 
 ## 🏗️ Architecture Pipeline
@@ -27,7 +27,7 @@ Codebase Documenter is an AI-powered tool that automatically generates comprehen
 1. **Clone**: The backend receives a GitHub URL and securely clones the target repository.
 2. **Parse**: Scans and extracts content from supported source code files.
 3. **Chunk**: Divides the parsed codebase into manageable context chunks optimized for LLMs.
-4. **Embed**: Generates vector embeddings for each chunk and stores them in a FAISS vector store.
+4. **Embed**: Generates vector embeddings for each chunk and stores them in a ChromaDB vector store.
 5. **Generate**: Queries the vector store to extract meaningful context and generates comprehensive documentation.
 
 ## ⚙️ Prerequisites
