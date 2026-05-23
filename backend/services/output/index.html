@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>speercheck</title>
+<title>Shipment & Fleet Tracker</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: Georgia, serif; background: #fff; color: #222; display: flex; }
@@ -26,107 +26,149 @@
 <div id="sidebar">
   <h2>Files</h2>
   <input placeholder="Search..." oninput="filterFiles(this.value)">
-  <a href="#components-json">components.json</a>
-<a href="#eslint-config-js">eslint.config.js</a>
-<a href="#index-html">index.html</a>
-<a href="#jest-config-ts">jest.config.ts</a>
+  <a href="#package-json">package.json</a>
+<a href="#seed-js">seed.js</a>
+<a href="#server-js">server.js</a>
+<a href="#auth-js">auth.js</a>
+<a href="#Shipment-js">Shipment.js</a>
+<a href="#User-js">User.js</a>
+<a href="#auth-js">auth.js</a>
+<a href="#shipments-js">shipments.js</a>
+<a href="#angular-json">angular.json</a>
 <a href="#package-json">package.json</a>
-<a href="#README-md">README.md</a>
 <a href="#tsconfig-app-json">tsconfig.app.json</a>
 <a href="#tsconfig-json">tsconfig.json</a>
-<a href="#tsconfig-node-json">tsconfig.node.json</a>
-<a href="#vite-config-ts">vite.config.ts</a>
-<a href="#App-tsx">App.tsx</a>
-<a href="#index-css">index.css</a>
-<a href="#main-tsx">main.tsx</a>
-<a href="#Button-tsx">Button.tsx</a>
-<a href="#Calender-tsx">Calender.tsx</a>
-<a href="#ConfirmationScreen-tsx">ConfirmationScreen.tsx</a>
-<a href="#Main-tsx">Main.tsx</a>
-<a href="#Navbar-tsx">Navbar.tsx</a>
-<a href="#SlotCard-tsx">SlotCard.tsx</a>
-<a href="#Toast-tsx">Toast.tsx</a>
-<a href="#TopBar-tsx">TopBar.tsx</a>
-<a href="#label-tsx">label.tsx</a>
-<a href="#scroll-area-tsx">scroll-area.tsx</a>
-<a href="#select-tsx">select.tsx</a>
-<a href="#separator-tsx">separator.tsx</a>
-<a href="#sonner-tsx">sonner.tsx</a>
-<a href="#availability-ts">availability.ts</a>
-<a href="#utils-ts">utils.ts</a>
-<a href="#getDays-ts">getDays.ts</a>
-<a href="#getTime-ts">getTime.ts</a>
-<a href="#Home-tsx">Home.tsx</a>
-<a href="#useSchedulerStore-ts">useSchedulerStore.ts</a>
-<a href="#availability-test-ts">availability.test.ts</a>
+<a href="#index-html">index.html</a>
+<a href="#main-ts">main.ts</a>
+<a href="#styles-css">styles.css</a>
+<a href="#app-component-ts">app.component.ts</a>
+<a href="#app-config-ts">app.config.ts</a>
+<a href="#app-routes-ts">app.routes.ts</a>
+<a href="#dashboard-component-css">dashboard.component.css</a>
+<a href="#dashboard-component-html">dashboard.component.html</a>
+<a href="#dashboard-component-ts">dashboard.component.ts</a>
+<a href="#login-component-css">login.component.css</a>
+<a href="#login-component-html">login.component.html</a>
+<a href="#login-component-ts">login.component.ts</a>
+<a href="#map-component-ts">map.component.ts</a>
+<a href="#shipment-form-component-css">shipment-form.component.css</a>
+<a href="#shipment-form-component-html">shipment-form.component.html</a>
+<a href="#shipment-form-component-ts">shipment-form.component.ts</a>
+<a href="#shipment-list-component-css">shipment-list.component.css</a>
+<a href="#shipment-list-component-html">shipment-list.component.html</a>
+<a href="#shipment-list-component-ts">shipment-list.component.ts</a>
+<a href="#auth-guard-ts">auth.guard.ts</a>
+<a href="#auth-interceptor-ts">auth.interceptor.ts</a>
+<a href="#auth-service-ts">auth.service.ts</a>
+<a href="#shipment-service-ts">shipment.service.ts</a>
 
 </div>
 <div id="main">
-  <h1>speercheck</h1>
+  <h1>Shipment & Fleet Tracker</h1>
   
-        <div id="components-json">
-            <h3>components.json</h3>
-            <p>Configures shadcn/ui components and project aliases.</p>
+        <div id="package-json">
+            <h3>package.json</h3>
+            <p>Defines backend project metadata, scripts, and dependencies.</p>
             <h4>Functions</h4>
             <ul><li>None</li></ul>
             <h4>Dependencies</h4>
-            <ul><li>None</li></ul>
+            <ul><li>bcryptjs</li><li>cors</li><li>dotenv</li><li>express</li><li>jsonwebtoken</li><li>mongoose</li><li>nodemon</li></ul>
             <hr>
         </div>
         
-        <div id="eslint-config-js">
-            <h3>eslint.config.js</h3>
-            <p>Configures ESLint for the project, including TypeScript, React hooks, and React refresh.</p>
+        <div id="seed-js">
+            <h3>seed.js</h3>
+            <p>Populates the database with sample admin/viewer users and demo shipments.</p>
             <h4>Functions</h4>
-            <ul><li>defineConfig - sets up ESLint configuration</li></ul>
+            <ul><li>seedData - populates the database with sample data</li></ul>
             <h4>Dependencies</h4>
-            <ul><li>@eslint/js</li><li>globals</li><li>eslint-plugin-react-hooks</li><li>eslint-plugin-react-refresh</li><li>typescript-eslint</li><li>eslint/config</li></ul>
+            <ul><li>mongoose</li><li>dotenv</li><li>./models/User</li><li>./models/Shipment</li></ul>
             <hr>
         </div>
         
-        <div id="index-html">
-            <h3>index.html</h3>
-            <p>The main HTML entry point for the React application.</p>
+        <div id="server-js">
+            <h3>server.js</h3>
+            <p>Main entry point for the Express backend API, sets up middleware, connects to MongoDB, and defines routes.</p>
             <h4>Functions</h4>
             <ul><li>None</li></ul>
             <h4>Dependencies</h4>
-            <ul><li>None</li></ul>
+            <ul><li>express</li><li>mongoose</li><li>cors</li><li>dotenv</li><li>./routes/auth</li><li>./routes/shipments</li></ul>
             <hr>
         </div>
         
-        <div id="jest-config-ts">
-            <h3>jest.config.ts</h3>
-            <p>Configures Jest for running TypeScript tests using ts-jest.</p>
+        <div id="auth-js">
+            <h3>auth.js</h3>
+            <p>Provides middleware functions for JWT token verification and role-based access control.</p>
+            <h4>Functions</h4>
+            <ul><li>verifyToken - verifies a JWT token from the request header</li><li>requireAdmin - checks if the authenticated user has an 'admin' role</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>jsonwebtoken</li></ul>
+            <hr>
+        </div>
+        
+        <div id="Shipment-js">
+            <h3>Shipment.js</h3>
+            <p>Defines the Mongoose schema and model for shipment data.</p>
             <h4>Functions</h4>
             <ul><li>None</li></ul>
             <h4>Dependencies</h4>
-            <ul><li>ts-jest</li></ul>
+            <ul><li>mongoose</li></ul>
+            <hr>
+        </div>
+        
+        <div id="User-js">
+            <h3>User.js</h3>
+            <p>Defines the Mongoose schema and model for user data, including password hashing.</p>
+            <h4>Functions</h4>
+            <ul><li>userSchema.pre('save') - hashes user password before saving</li><li>userSchema.methods.comparePassword - compares a candidate password with the stored hash</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>mongoose</li><li>bcryptjs</li></ul>
+            <hr>
+        </div>
+        
+        <div id="auth-js">
+            <h3>auth.js</h3>
+            <p>Handles user authentication (registration, login) and provides current user information.</p>
+            <h4>Functions</h4>
+            <ul><li>router.post('/register') - registers a new user</li><li>router.post('/login') - authenticates a user and returns a JWT</li><li>router.get('/me') - retrieves the current user's profile</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>express</li><li>jsonwebtoken</li><li>../models/User</li><li>../middleware/auth</li></ul>
+            <hr>
+        </div>
+        
+        <div id="shipments-js">
+            <h3>shipments.js</h3>
+            <p>Defines API routes for managing shipments, including CRUD operations and filtering.</p>
+            <h4>Functions</h4>
+            <ul><li>router.get('/') - lists all shipments with optional filters</li><li>router.get('/:id') - retrieves a single shipment by ID</li><li>router.post('/') - creates a new shipment (admin only)</li><li>router.put('/:id') - updates an existing shipment (admin only)</li><li>router.delete('/:id') - deletes a shipment (admin only)</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>express</li><li>../models/Shipment</li><li>../middleware/auth</li></ul>
+            <hr>
+        </div>
+        
+        <div id="angular-json">
+            <h3>angular.json</h3>
+            <p>Angular CLI configuration file for the frontend project.</p>
+            <h4>Functions</h4>
+            <ul><li>None</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>None</li></ul>
             <hr>
         </div>
         
         <div id="package-json">
             <h3>package.json</h3>
-            <p>Defines project metadata, scripts, and manages dependencies for the application.</p>
+            <p>Defines frontend project metadata, scripts, and dependencies.</p>
             <h4>Functions</h4>
             <ul><li>None</li></ul>
             <h4>Dependencies</h4>
-            <ul><li>@fontsource-variable/geist</li><li>class-variance-authority</li><li>clsx</li><li>dayjs</li><li>lucide-react</li><li>next-themes</li><li>radix-ui</li><li>react</li><li>react-dom</li><li>react-hot-toast</li><li>shadcn</li><li>sonner</li><li>tailwind-merge</li><li>tw-animate-css</li><li>zustand</li><li>@eslint/js</li><li>@tailwindcss/vite</li><li>@types/jest</li><li>@types/node</li><li>@types/react</li><li>@types/react-dom</li><li>@vitejs/plugin-react</li><li>autoprefixer</li><li>eslint</li><li>eslint-plugin-react-hooks</li><li>eslint-plugin-react-refresh</li><li>globals</li><li>jest</li><li>postcss</li><li>tailwindcss</li><li>ts-jest</li><li>typescript</li><li>typescript-eslint</li><li>vite</li></ul>
-            <hr>
-        </div>
-        
-        <div id="README-md">
-            <h3>README.md</h3>
-            <p>Provides an overview of the project, design decisions, setup instructions, and AI usage.</p>
-            <h4>Functions</h4>
-            <ul><li>None</li></ul>
-            <h4>Dependencies</h4>
-            <ul><li>None</li></ul>
+            <ul><li>@angular/animations</li><li>@angular/common</li><li>@angular/compiler</li><li>@angular/core</li><li>@angular/forms</li><li>@angular/platform-browser</li><li>@angular/platform-browser-dynamic</li><li>@angular/router</li><li>leaflet</li><li>rxjs</li><li>tslib</li><li>zone.js</li><li>@angular-devkit/build-angular</li><li>@angular/cli</li><li>@angular/compiler-cli</li><li>@types/leaflet</li><li>typescript</li></ul>
             <hr>
         </div>
         
         <div id="tsconfig-app-json">
             <h3>tsconfig.app.json</h3>
-            <p>TypeScript configuration specifically for the application source files.</p>
+            <p>TypeScript configuration for the Angular application compilation.</p>
             <h4>Functions</h4>
             <ul><li>None</li></ul>
             <h4>Dependencies</h4>
@@ -136,7 +178,7 @@
         
         <div id="tsconfig-json">
             <h3>tsconfig.json</h3>
-            <p>Main TypeScript configuration file, referencing other tsconfig files.</p>
+            <p>Base TypeScript configuration for the Angular project.</p>
             <h4>Functions</h4>
             <ul><li>None</li></ul>
             <h4>Dependencies</h4>
@@ -144,9 +186,9 @@
             <hr>
         </div>
         
-        <div id="tsconfig-node-json">
-            <h3>tsconfig.node.json</h3>
-            <p>TypeScript configuration specifically for Node.js-related files like vite.config.ts.</p>
+        <div id="index-html">
+            <h3>index.html</h3>
+            <p>Main HTML file for the Angular frontend, serving as the entry point for the web application.</p>
             <h4>Functions</h4>
             <ul><li>None</li></ul>
             <h4>Dependencies</h4>
@@ -154,179 +196,19 @@
             <hr>
         </div>
         
-        <div id="vite-config-ts">
-            <h3>vite.config.ts</h3>
-            <p>Configures Vite for development and build processes, including React and Tailwind CSS plugins.</p>
+        <div id="main-ts">
+            <h3>main.ts</h3>
+            <p>Entry point for bootstrapping the Angular application.</p>
             <h4>Functions</h4>
-            <ul><li>defineConfig - configures Vite</li></ul>
+            <ul><li>bootstrapApplication - initializes and starts the Angular application</li></ul>
             <h4>Dependencies</h4>
-            <ul><li>vite</li><li>@vitejs/plugin-react</li><li>@tailwindcss/vite</li><li>path</li></ul>
+            <ul><li>@angular/platform-browser</li><li>./app/app.config</li><li>./app/app.component</li></ul>
             <hr>
         </div>
         
-        <div id="App-tsx">
-            <h3>App.tsx</h3>
-            <p>The root component of the React application, rendering the Home page and a global toast system.</p>
-            <h4>Functions</h4>
-            <ul><li>App - main application component</li></ul>
-            <h4>Dependencies</h4>
-            <ul><li>./index.css</li><li>./pages/Home</li><li>react-hot-toast</li></ul>
-            <hr>
-        </div>
-        
-        <div id="index-css">
-            <h3>index.css</h3>
-            <p>Global CSS file importing fonts, Tailwind CSS, animations, and defining custom theme variables.</p>
-            <h4>Functions</h4>
-            <ul><li>None</li></ul>
-            <h4>Dependencies</h4>
-            <ul><li>tailwindcss</li><li>tw-animate-css</li><li>shadcn/tailwind.css</li><li>@fontsource-variable/geist</li></ul>
-            <hr>
-        </div>
-        
-        <div id="main-tsx">
-            <h3>main.tsx</h3>
-            <p>Entry point for the React application, rendering the App component into the DOM.</p>
-            <h4>Functions</h4>
-            <ul><li>None</li></ul>
-            <h4>Dependencies</h4>
-            <ul><li>react</li><li>react-dom</li><li>./index.css</li><li>./App.tsx</li></ul>
-            <hr>
-        </div>
-        
-        <div id="Button-tsx">
-            <h3>Button.tsx</h3>
-            <p>A React component that provides a dropdown for selecting a candidate.</p>
-            <h4>Functions</h4>
-            <ul><li>Button - renders the candidate selection dropdown</li></ul>
-            <h4>Dependencies</h4>
-            <ul><li>../data/availability</li><li>@/store/useSchedulerStore</li><li>@/components/ui/select</li></ul>
-            <hr>
-        </div>
-        
-        <div id="Calender-tsx">
-            <h3>Calender.tsx</h3>
-            <p>Displays a calendar grid with time slots, showing engineer and candidate availability, and handles slot selection.</p>
-            <h4>Functions</h4>
-            <ul><li>Calender - renders the calendar interface</li></ul>
-            <h4>Dependencies</h4>
-            <ul><li>../libs/getTime</li><li>../libs/getDays</li><li>./ui/scroll-area</li><li>dayjs</li><li>clsx</li><li>../data/availability</li><li>./SlotCard</li><li>@/store/useSchedulerStore</li></ul>
-            <hr>
-        </div>
-        
-        <div id="ConfirmationScreen-tsx">
-            <h3>ConfirmationScreen.tsx</h3>
-            <p>A modal component that displays interview confirmation details and handles scheduling.</p>
-            <h4>Functions</h4>
-            <ul><li>ConfirmationModal - renders the interview confirmation modal</li><li>handleConfirm - schedules the interview and shows a toast</li></ul>
-            <h4>Dependencies</h4>
-            <ul><li>../store/useSchedulerStore</li><li>dayjs</li><li>clsx</li><li>react-hot-toast</li></ul>
-            <hr>
-        </div>
-        
-        <div id="Main-tsx">
-            <h3>Main.tsx</h3>
-            <p>Orchestrates the main layout of the application, including the top bar, calendar, and confirmation screen.</p>
-            <h4>Functions</h4>
-            <ul><li>Main - composes the main UI components</li></ul>
-            <h4>Dependencies</h4>
-            <ul><li>./Calender</li><li>./TopBar</li><li>./ConfirmationScreen</li></ul>
-            <hr>
-        </div>
-        
-        <div id="Navbar-tsx">
-            <h3>Navbar.tsx</h3>
-            <p>Renders a navigation bar with the application logo and title.</p>
-            <h4>Functions</h4>
-            <ul><li>Navbar - displays the application logo and title</li></ul>
-            <h4>Dependencies</h4>
-            <ul><li>../assets/speer_logo_header.fd6ca103 (1).svg</li></ul>
-            <hr>
-        </div>
-        
-        <div id="SlotCard-tsx">
-            <h3>SlotCard.tsx</h3>
-            <p>A reusable component to display individual time slots for engineers, candidates, or overlaps within the calendar.</p>
-            <h4>Functions</h4>
-            <ul><li>SlotCard - renders an interactive time slot</li></ul>
-            <h4>Dependencies</h4>
-            <ul><li>clsx</li></ul>
-            <hr>
-        </div>
-        
-        <div id="Toast-tsx">
-            <h3>Toast.tsx</h3>
-            <p>A simple React component for displaying a toast message.</p>
-            <h4>Functions</h4>
-            <ul><li>Toast - renders a toast message</li></ul>
-            <h4>Dependencies</h4>
-            <ul><li>None</li></ul>
-            <hr>
-        </div>
-        
-        <div id="TopBar-tsx">
-            <h3>TopBar.tsx</h3>
-            <p>Displays the application header, including the logo, week navigation, engineer legends, and candidate selection.</p>
-            <h4>Functions</h4>
-            <ul><li>TopBar - renders the application's top navigation and information bar</li></ul>
-            <h4>Dependencies</h4>
-            <ul><li>@/assets/speer_logo_header.fd6ca103 (1).svg</li><li>./Button</li><li>../data/availability</li><li>../libs/getDays</li><li>dayjs</li><li>clsx</li></ul>
-            <hr>
-        </div>
-        
-        <div id="label-tsx">
-            <h3>label.tsx</h3>
-            <p>A Shadcn UI component for rendering accessible labels.</p>
-            <h4>Functions</h4>
-            <ul><li>Label - renders an accessible label</li></ul>
-            <h4>Dependencies</h4>
-            <ul><li>react</li><li>radix-ui</li><li>@/lib/utils</li></ul>
-            <hr>
-        </div>
-        
-        <div id="scroll-area-tsx">
-            <h3>scroll-area.tsx</h3>
-            <p>A Shadcn UI component for creating scrollable regions with custom scrollbars.</p>
-            <h4>Functions</h4>
-            <ul><li>ScrollArea - creates a scrollable container</li><li>ScrollBar - renders the custom scrollbar</li></ul>
-            <h4>Dependencies</h4>
-            <ul><li>react</li><li>radix-ui</li><li>@/lib/utils</li></ul>
-            <hr>
-        </div>
-        
-        <div id="select-tsx">
-            <h3>select.tsx</h3>
-            <p>A Shadcn UI component providing a highly customizable select dropdown.</p>
-            <h4>Functions</h4>
-            <ul><li>Select - root select component</li><li>SelectGroup - groups select items</li><li>SelectValue - displays the selected value</li><li>SelectTrigger - the interactive element that opens the select</li><li>SelectContent - the container for select items</li><li>SelectLabel - a label for a group of items</li><li>SelectItem - an individual selectable item</li><li>SelectSeparator - a visual separator between items</li><li>SelectScrollUpButton - button to scroll up in the select content</li><li>SelectScrollDownButton - button to scroll down in the select content</li></ul>
-            <h4>Dependencies</h4>
-            <ul><li>react</li><li>radix-ui</li><li>@/lib/utils</li><li>lucide-react</li></ul>
-            <hr>
-        </div>
-        
-        <div id="separator-tsx">
-            <h3>separator.tsx</h3>
-            <p>A Shadcn UI component for rendering a visual separator.</p>
-            <h4>Functions</h4>
-            <ul><li>Separator - renders a visual separator</li></ul>
-            <h4>Dependencies</h4>
-            <ul><li>react</li><li>radix-ui</li><li>@/lib/utils</li></ul>
-            <hr>
-        </div>
-        
-        <div id="sonner-tsx">
-            <h3>sonner.tsx</h3>
-            <p>Wraps the sonner toast library with next-themes integration and custom icons.</p>
-            <h4>Functions</h4>
-            <ul><li>Toaster - configures and renders the sonner toast system</li></ul>
-            <h4>Dependencies</h4>
-            <ul><li>next-themes</li><li>sonner</li><li>lucide-react</li></ul>
-            <hr>
-        </div>
-        
-        <div id="availability-ts">
-            <h3>availability.ts</h3>
-            <p>Defines static dummy data for engineers and candidates, including their availability schedules.</p>
+        <div id="styles-css">
+            <h3>styles.css</h3>
+            <p>Defines global CSS styles, variables, and utility classes for the frontend application.</p>
             <h4>Functions</h4>
             <ul><li>None</li></ul>
             <h4>Dependencies</h4>
@@ -334,63 +216,203 @@
             <hr>
         </div>
         
-        <div id="utils-ts">
-            <h3>utils.ts</h3>
-            <p>Provides utility functions, specifically for conditionally joining CSS class names.</p>
+        <div id="app-component-ts">
+            <h3>app.component.ts</h3>
+            <p>Root component of the Angular application, hosting the router outlet.</p>
             <h4>Functions</h4>
-            <ul><li>cn - conditionally joins CSS class names using clsx and tailwind-merge</li></ul>
+            <ul><li>None</li></ul>
             <h4>Dependencies</h4>
-            <ul><li>clsx</li><li>tailwind-merge</li></ul>
+            <ul><li>@angular/core</li><li>@angular/router</li></ul>
             <hr>
         </div>
         
-        <div id="getDays-ts">
-            <h3>getDays.ts</h3>
-            <p>Generates an array of 5 days starting from the current week's Monday.</p>
+        <div id="app-config-ts">
+            <h3>app.config.ts</h3>
+            <p>Configures the Angular application's providers, including routing and HTTP client with interceptors.</p>
             <h4>Functions</h4>
-            <ul><li>generateDays - calculates and returns an array of day objects</li></ul>
+            <ul><li>None</li></ul>
             <h4>Dependencies</h4>
-            <ul><li>dayjs</li></ul>
+            <ul><li>@angular/core</li><li>@angular/router</li><li>@angular/common/http</li><li>./app.routes</li><li>./interceptors/auth.interceptor</li></ul>
             <hr>
         </div>
         
-        <div id="getTime-ts">
-            <h3>getTime.ts</h3>
-            <p>Generates an array of 30-minute time slots from 9 AM to 6 PM.</p>
+        <div id="app-routes-ts">
+            <h3>app.routes.ts</h3>
+            <p>Defines the routing configuration for the Angular application.</p>
             <h4>Functions</h4>
-            <ul><li>generateSlots - calculates and returns an array of time strings</li></ul>
+            <ul><li>None</li></ul>
             <h4>Dependencies</h4>
-            <ul><li>dayjs</li></ul>
+            <ul><li>@angular/router</li><li>./components/login/login.component</li><li>./components/dashboard/dashboard.component</li><li>./guards/auth.guard</li></ul>
             <hr>
         </div>
         
-        <div id="Home-tsx">
-            <h3>Home.tsx</h3>
-            <p>The main page component that renders the core application layout.</p>
+        <div id="dashboard-component-css">
+            <h3>dashboard.component.css</h3>
+            <p>Styles for the dashboard component layout and elements.</p>
             <h4>Functions</h4>
-            <ul><li>Home - renders the Main component</li></ul>
-            <h4>Dependencies</h4>
-            <ul><li>../components/Main</li></ul>
-            <hr>
-        </div>
-        
-        <div id="useSchedulerStore-ts">
-            <h3>useSchedulerStore.ts</h3>
-            <p>Implements Zustand stores for managing global state related to candidate selection, interview confirmation, and booked slots.</p>
-            <h4>Functions</h4>
-            <ul><li>useCandidateStore - manages the selected candidate state</li><li>useConfirmStore - manages the interview confirmation details state</li><li>useBookedSlotStore - manages the booked interview slots state</li></ul>
-            <h4>Dependencies</h4>
-            <ul><li>zustand</li><li>../data/availability</li></ul>
-            <hr>
-        </div>
-        
-        <div id="availability-test-ts">
-            <h3>availability.test.ts</h3>
-            <p>Contains unit tests for the interview overlap logic.</p>
-            <h4>Functions</h4>
-            <ul><li>findOverlap - helper function to simulate overlap logic</li></ul>
+            <ul><li>None</li></ul>
             <h4>Dependencies</h4>
             <ul><li>None</li></ul>
+            <hr>
+        </div>
+        
+        <div id="dashboard-component-html">
+            <h3>dashboard.component.html</h3>
+            <p>HTML template for the dashboard component, displaying stats, map, shipment list, and form modal.</p>
+            <h4>Functions</h4>
+            <ul><li>logout - logs out the user</li><li>onFilterChange - applies shipment status filter</li><li>onAddNew - opens form for new shipment creation</li><li>onEdit - opens form for editing a shipment</li><li>onDelete - deletes a shipment</li><li>onFormClose - closes the shipment form modal</li><li>onFormSaved - handles form saved event to refresh data</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>None</li></ul>
+            <hr>
+        </div>
+        
+        <div id="dashboard-component-ts">
+            <h3>dashboard.component.ts</h3>
+            <p>Manages the dashboard view, including fetching and displaying shipments, stats, filtering, and CRUD operations.</p>
+            <h4>Functions</h4>
+            <ul><li>ngOnInit - initializes component data by loading shipments</li><li>loadShipments - fetches shipments from the service and updates stats</li><li>calculateStats - computes shipment statistics based on current data</li><li>onFilterChange - updates filtered shipments based on selected status</li><li>onAddNew - prepares the form for creating a new shipment</li><li>onEdit - prepares the form for editing an existing shipment</li><li>onDelete - handles shipment deletion via the service</li><li>onFormClose - closes the shipment form modal</li><li>onFormSaved - reloads shipments after a form submission (create/update)</li><li>logout - calls the authentication service to log out the user</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>@angular/core</li><li>@angular/common</li><li>@angular/forms</li><li>../../services/auth.service</li><li>../../services/shipment.service</li><li>../shipment-list/shipment-list.component</li><li>../map/map.component</li><li>../shipment-form/shipment-form.component</li></ul>
+            <hr>
+        </div>
+        
+        <div id="login-component-css">
+            <h3>login.component.css</h3>
+            <p>Styles for the login and registration page.</p>
+            <h4>Functions</h4>
+            <ul><li>None</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>None</li></ul>
+            <hr>
+        </div>
+        
+        <div id="login-component-html">
+            <h3>login.component.html</h3>
+            <p>HTML template for the login and registration component.</p>
+            <h4>Functions</h4>
+            <ul><li>onSubmit - handles form submission for login or registration</li><li>toggleMode - switches between login and registration forms</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>None</li></ul>
+            <hr>
+        </div>
+        
+        <div id="login-component-ts">
+            <h3>login.component.ts</h3>
+            <p>Handles user login and registration logic, interacting with the authentication service.</p>
+            <h4>Functions</h4>
+            <ul><li>constructor - redirects to dashboard if already logged in</li><li>toggleMode - switches between login and registration forms</li><li>onSubmit - performs user login or registration</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>@angular/core</li><li>@angular/common</li><li>@angular/forms</li><li>@angular/router</li><li>../../services/auth.service</li></ul>
+            <hr>
+        </div>
+        
+        <div id="map-component-ts">
+            <h3>map.component.ts</h3>
+            <p>Displays shipment locations on an interactive Leaflet map.</p>
+            <h4>Functions</h4>
+            <ul><li>ngAfterViewInit - initializes the map after the view is rendered</li><li>ngOnChanges - updates map markers when shipments input changes</li><li>initMap - sets up the Leaflet map instance</li><li>updateMarkers - clears existing markers and adds new ones for shipments</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>@angular/core</li><li>@angular/common</li><li>../../services/shipment.service</li><li>leaflet</li></ul>
+            <hr>
+        </div>
+        
+        <div id="shipment-form-component-css">
+            <h3>shipment-form.component.css</h3>
+            <p>Styles for the shipment creation and editing modal form.</p>
+            <h4>Functions</h4>
+            <ul><li>None</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>None</li></ul>
+            <hr>
+        </div>
+        
+        <div id="shipment-form-component-html">
+            <h3>shipment-form.component.html</h3>
+            <p>HTML template for the shipment creation and editing form modal.</p>
+            <h4>Functions</h4>
+            <ul><li>onClose - closes the modal</li><li>onSubmit - submits the shipment form</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>None</li></ul>
+            <hr>
+        </div>
+        
+        <div id="shipment-form-component-ts">
+            <h3>shipment-form.component.ts</h3>
+            <p>Manages the form for creating or editing shipment details.</p>
+            <h4>Functions</h4>
+            <ul><li>ngOnInit - initializes form data if editing an existing shipment</li><li>onSubmit - handles form submission to create or update a shipment</li><li>onClose - emits a close event for the modal</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>@angular/core</li><li>@angular/common</li><li>@angular/forms</li><li>../../services/shipment.service</li></ul>
+            <hr>
+        </div>
+        
+        <div id="shipment-list-component-css">
+            <h3>shipment-list.component.css</h3>
+            <p>Styles for the shipment list table.</p>
+            <h4>Functions</h4>
+            <ul><li>None</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>None</li></ul>
+            <hr>
+        </div>
+        
+        <div id="shipment-list-component-html">
+            <h3>shipment-list.component.html</h3>
+            <p>HTML template for displaying a list of shipments in a table.</p>
+            <h4>Functions</h4>
+            <ul><li>onEdit - emits an event to edit a specific shipment</li><li>onDelete - emits an event to delete a specific shipment</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>None</li></ul>
+            <hr>
+        </div>
+        
+        <div id="shipment-list-component-ts">
+            <h3>shipment-list.component.ts</h3>
+            <p>Displays a table of shipments and allows editing/deleting for admin users.</p>
+            <h4>Functions</h4>
+            <ul><li>onEdit - emits an event to edit a shipment</li><li>onDelete - emits an event to delete a shipment</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>@angular/core</li><li>@angular/common</li><li>../../services/shipment.service</li></ul>
+            <hr>
+        </div>
+        
+        <div id="auth-guard-ts">
+            <h3>auth.guard.ts</h3>
+            <p>Angular route guard to protect routes that require authentication.</p>
+            <h4>Functions</h4>
+            <ul><li>authGuard - checks if a user is logged in before allowing route activation</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>@angular/core</li><li>@angular/router</li><li>../services/auth.service</li></ul>
+            <hr>
+        </div>
+        
+        <div id="auth-interceptor-ts">
+            <h3>auth.interceptor.ts</h3>
+            <p>Angular HTTP interceptor to add JWT authorization token to outgoing requests.</p>
+            <h4>Functions</h4>
+            <ul><li>authInterceptor - intercepts HTTP requests to add an Authorization header</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>@angular/common/http</li></ul>
+            <hr>
+        </div>
+        
+        <div id="auth-service-ts">
+            <h3>auth.service.ts</h3>
+            <p>Provides authentication functionalities including login, registration, logout, and managing user state.</p>
+            <h4>Functions</h4>
+            <ul><li>constructor - restores user from local storage on app start</li><li>login - authenticates a user with the backend</li><li>register - registers a new user with the backend</li><li>logout - clears user session and navigates to login</li><li>isLoggedIn - checks if a user token exists</li><li>currentUser - gets the current authenticated user object</li><li>isAdmin - checks if the current user has 'admin' role</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>@angular/core</li><li>@angular/common/http</li><li>rxjs</li><li>@angular/router</li></ul>
+            <hr>
+        </div>
+        
+        <div id="shipment-service-ts">
+            <h3>shipment.service.ts</h3>
+            <p>Provides methods for interacting with the backend API for shipment-related operations.</p>
+            <h4>Functions</h4>
+            <ul><li>getShipments - fetches a list of shipments with optional filters</li><li>getShipment - fetches a single shipment by ID</li><li>createShipment - creates a new shipment</li><li>updateShipment - updates an existing shipment</li><li>deleteShipment - deletes a shipment</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>@angular/core</li><li>@angular/common/http</li><li>rxjs</li></ul>
             <hr>
         </div>
         

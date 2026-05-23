@@ -1,6 +1,5 @@
 import os
 
-ex = "C:\\Users\\dhruv\\OneDrive\\Desktop\\Sites\\codebasedocumentor\\backend\\repositories\\speercheck"
 IGNORE_DIR = [
     # Python
     "__pycache__",
@@ -133,5 +132,3 @@ def parsing_files(repository_path):
         result_structure.append(folder_structure)
 
     return result_files
-
-print(parsing_files(ex))
