@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>speercheck</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Georgia, serif; background: #fff; color: #222; display: flex; }
+  #sidebar { width: 220px; position: fixed; top: 0; left: 0; bottom: 0; padding: 32px 20px; border-right: 1px solid #ddd; overflow-y: auto; }
+  #sidebar h2 { font-size: 13px; font-weight: bold; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px; color: #222; }
+  #sidebar a { display: block; font-size: 13px; color: #0000EE; text-decoration: underline; margin-bottom: 8px; font-family: monospace; }
+  #sidebar a:hover { color: #551A8B; }
+  #main { margin-left: 220px; padding: 40px 60px; max-width: 820px; }
+  h1 { font-size: 24px; margin-bottom: 32px; }
+  h3 { font-size: 16px; font-family: monospace; margin: 24px 0 8px; }
+  h4 { font-size: 13px; margin: 12px 0 6px; color: #444; }
+  p  { font-size: 14px; color: #444; line-height: 1.6; }
+  ul { padding-left: 20px; margin-bottom: 8px; }
+  li { font-size: 13px; color: #444; line-height: 1.8; }
+  hr { border: none; border-top: 1px solid #eee; margin: 24px 0; }
+  input { width: 100%; padding: 6px 8px; font-size: 12px; border: 1px solid #ddd; margin-bottom: 16px; }
+</style>
+</head>
+<body>
+<div id="sidebar">
+  <h2>Files</h2>
+  <input placeholder="Search..." oninput="filterFiles(this.value)">
+  <a href="#components-json">components.json</a>
+<a href="#eslint-config-js">eslint.config.js</a>
+<a href="#index-html">index.html</a>
+<a href="#jest-config-ts">jest.config.ts</a>
+<a href="#package-json">package.json</a>
+<a href="#README-md">README.md</a>
+<a href="#tsconfig-app-json">tsconfig.app.json</a>
+<a href="#tsconfig-json">tsconfig.json</a>
+<a href="#tsconfig-node-json">tsconfig.node.json</a>
+<a href="#vite-config-ts">vite.config.ts</a>
+<a href="#App-tsx">App.tsx</a>
+<a href="#index-css">index.css</a>
+<a href="#main-tsx">main.tsx</a>
+<a href="#Button-tsx">Button.tsx</a>
+<a href="#Calender-tsx">Calender.tsx</a>
+<a href="#ConfirmationScreen-tsx">ConfirmationScreen.tsx</a>
+<a href="#Main-tsx">Main.tsx</a>
+<a href="#Navbar-tsx">Navbar.tsx</a>
+<a href="#SlotCard-tsx">SlotCard.tsx</a>
+<a href="#Toast-tsx">Toast.tsx</a>
+<a href="#TopBar-tsx">TopBar.tsx</a>
+<a href="#label-tsx">label.tsx</a>
+<a href="#scroll-area-tsx">scroll-area.tsx</a>
+<a href="#select-tsx">select.tsx</a>
+<a href="#separator-tsx">separator.tsx</a>
+<a href="#sonner-tsx">sonner.tsx</a>
+<a href="#availability-ts">availability.ts</a>
+<a href="#utils-ts">utils.ts</a>
+<a href="#getDays-ts">getDays.ts</a>
+<a href="#getTime-ts">getTime.ts</a>
+<a href="#Home-tsx">Home.tsx</a>
+<a href="#useSchedulerStore-ts">useSchedulerStore.ts</a>
+<a href="#availability-test-ts">availability.test.ts</a>
+
+</div>
+<div id="main">
+  <h1>speercheck</h1>
+  
+        <div id="components-json">
+            <h3>components.json</h3>
+            <p>Configures shadcn/ui components and project aliases.</p>
+            <h4>Functions</h4>
+            <ul><li>None</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>None</li></ul>
+            <hr>
+        </div>
+        
+        <div id="eslint-config-js">
+            <h3>eslint.config.js</h3>
+            <p>Configures ESLint for the project, including TypeScript, React hooks, and React refresh.</p>
+            <h4>Functions</h4>
+            <ul><li>defineConfig - sets up ESLint configuration</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>@eslint/js</li><li>globals</li><li>eslint-plugin-react-hooks</li><li>eslint-plugin-react-refresh</li><li>typescript-eslint</li><li>eslint/config</li></ul>
+            <hr>
+        </div>
+        
+        <div id="index-html">
+            <h3>index.html</h3>
+            <p>The main HTML entry point for the React application.</p>
+            <h4>Functions</h4>
+            <ul><li>None</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>None</li></ul>
+            <hr>
+        </div>
+        
+        <div id="jest-config-ts">
+            <h3>jest.config.ts</h3>
+            <p>Configures Jest for running TypeScript tests using ts-jest.</p>
+            <h4>Functions</h4>
+            <ul><li>None</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>ts-jest</li></ul>
+            <hr>
+        </div>
+        
+        <div id="package-json">
+            <h3>package.json</h3>
+            <p>Defines project metadata, scripts, and manages dependencies for the application.</p>
+            <h4>Functions</h4>
+            <ul><li>None</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>@fontsource-variable/geist</li><li>class-variance-authority</li><li>clsx</li><li>dayjs</li><li>lucide-react</li><li>next-themes</li><li>radix-ui</li><li>react</li><li>react-dom</li><li>react-hot-toast</li><li>shadcn</li><li>sonner</li><li>tailwind-merge</li><li>tw-animate-css</li><li>zustand</li><li>@eslint/js</li><li>@tailwindcss/vite</li><li>@types/jest</li><li>@types/node</li><li>@types/react</li><li>@types/react-dom</li><li>@vitejs/plugin-react</li><li>autoprefixer</li><li>eslint</li><li>eslint-plugin-react-hooks</li><li>eslint-plugin-react-refresh</li><li>globals</li><li>jest</li><li>postcss</li><li>tailwindcss</li><li>ts-jest</li><li>typescript</li><li>typescript-eslint</li><li>vite</li></ul>
+            <hr>
+        </div>
+        
+        <div id="README-md">
+            <h3>README.md</h3>
+            <p>Provides an overview of the project, design decisions, setup instructions, and AI usage.</p>
+            <h4>Functions</h4>
+            <ul><li>None</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>None</li></ul>
+            <hr>
+        </div>
+        
+        <div id="tsconfig-app-json">
+            <h3>tsconfig.app.json</h3>
+            <p>TypeScript configuration specifically for the application source files.</p>
+            <h4>Functions</h4>
+            <ul><li>None</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>None</li></ul>
+            <hr>
+        </div>
+        
+        <div id="tsconfig-json">
+            <h3>tsconfig.json</h3>
+            <p>Main TypeScript configuration file, referencing other tsconfig files.</p>
+            <h4>Functions</h4>
+            <ul><li>None</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>None</li></ul>
+            <hr>
+        </div>
+        
+        <div id="tsconfig-node-json">
+            <h3>tsconfig.node.json</h3>
+            <p>TypeScript configuration specifically for Node.js-related files like vite.config.ts.</p>
+            <h4>Functions</h4>
+            <ul><li>None</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>None</li></ul>
+            <hr>
+        </div>
+        
+        <div id="vite-config-ts">
+            <h3>vite.config.ts</h3>
+            <p>Configures Vite for development and build processes, including React and Tailwind CSS plugins.</p>
+            <h4>Functions</h4>
+            <ul><li>defineConfig - configures Vite</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>vite</li><li>@vitejs/plugin-react</li><li>@tailwindcss/vite</li><li>path</li></ul>
+            <hr>
+        </div>
+        
+        <div id="App-tsx">
+            <h3>App.tsx</h3>
+            <p>The root component of the React application, rendering the Home page and a global toast system.</p>
+            <h4>Functions</h4>
+            <ul><li>App - main application component</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>./index.css</li><li>./pages/Home</li><li>react-hot-toast</li></ul>
+            <hr>
+        </div>
+        
+        <div id="index-css">
+            <h3>index.css</h3>
+            <p>Global CSS file importing fonts, Tailwind CSS, animations, and defining custom theme variables.</p>
+            <h4>Functions</h4>
+            <ul><li>None</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>tailwindcss</li><li>tw-animate-css</li><li>shadcn/tailwind.css</li><li>@fontsource-variable/geist</li></ul>
+            <hr>
+        </div>
+        
+        <div id="main-tsx">
+            <h3>main.tsx</h3>
+            <p>Entry point for the React application, rendering the App component into the DOM.</p>
+            <h4>Functions</h4>
+            <ul><li>None</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>react</li><li>react-dom</li><li>./index.css</li><li>./App.tsx</li></ul>
+            <hr>
+        </div>
+        
+        <div id="Button-tsx">
+            <h3>Button.tsx</h3>
+            <p>A React component that provides a dropdown for selecting a candidate.</p>
+            <h4>Functions</h4>
+            <ul><li>Button - renders the candidate selection dropdown</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>../data/availability</li><li>@/store/useSchedulerStore</li><li>@/components/ui/select</li></ul>
+            <hr>
+        </div>
+        
+        <div id="Calender-tsx">
+            <h3>Calender.tsx</h3>
+            <p>Displays a calendar grid with time slots, showing engineer and candidate availability, and handles slot selection.</p>
+            <h4>Functions</h4>
+            <ul><li>Calender - renders the calendar interface</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>../libs/getTime</li><li>../libs/getDays</li><li>./ui/scroll-area</li><li>dayjs</li><li>clsx</li><li>../data/availability</li><li>./SlotCard</li><li>@/store/useSchedulerStore</li></ul>
+            <hr>
+        </div>
+        
+        <div id="ConfirmationScreen-tsx">
+            <h3>ConfirmationScreen.tsx</h3>
+            <p>A modal component that displays interview confirmation details and handles scheduling.</p>
+            <h4>Functions</h4>
+            <ul><li>ConfirmationModal - renders the interview confirmation modal</li><li>handleConfirm - schedules the interview and shows a toast</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>../store/useSchedulerStore</li><li>dayjs</li><li>clsx</li><li>react-hot-toast</li></ul>
+            <hr>
+        </div>
+        
+        <div id="Main-tsx">
+            <h3>Main.tsx</h3>
+            <p>Orchestrates the main layout of the application, including the top bar, calendar, and confirmation screen.</p>
+            <h4>Functions</h4>
+            <ul><li>Main - composes the main UI components</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>./Calender</li><li>./TopBar</li><li>./ConfirmationScreen</li></ul>
+            <hr>
+        </div>
+        
+        <div id="Navbar-tsx">
+            <h3>Navbar.tsx</h3>
+            <p>Renders a navigation bar with the application logo and title.</p>
+            <h4>Functions</h4>
+            <ul><li>Navbar - displays the application logo and title</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>../assets/speer_logo_header.fd6ca103 (1).svg</li></ul>
+            <hr>
+        </div>
+        
+        <div id="SlotCard-tsx">
+            <h3>SlotCard.tsx</h3>
+            <p>A reusable component to display individual time slots for engineers, candidates, or overlaps within the calendar.</p>
+            <h4>Functions</h4>
+            <ul><li>SlotCard - renders an interactive time slot</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>clsx</li></ul>
+            <hr>
+        </div>
+        
+        <div id="Toast-tsx">
+            <h3>Toast.tsx</h3>
+            <p>A simple React component for displaying a toast message.</p>
+            <h4>Functions</h4>
+            <ul><li>Toast - renders a toast message</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>None</li></ul>
+            <hr>
+        </div>
+        
+        <div id="TopBar-tsx">
+            <h3>TopBar.tsx</h3>
+            <p>Displays the application header, including the logo, week navigation, engineer legends, and candidate selection.</p>
+            <h4>Functions</h4>
+            <ul><li>TopBar - renders the application's top navigation and information bar</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>@/assets/speer_logo_header.fd6ca103 (1).svg</li><li>./Button</li><li>../data/availability</li><li>../libs/getDays</li><li>dayjs</li><li>clsx</li></ul>
+            <hr>
+        </div>
+        
+        <div id="label-tsx">
+            <h3>label.tsx</h3>
+            <p>A Shadcn UI component for rendering accessible labels.</p>
+            <h4>Functions</h4>
+            <ul><li>Label - renders an accessible label</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>react</li><li>radix-ui</li><li>@/lib/utils</li></ul>
+            <hr>
+        </div>
+        
+        <div id="scroll-area-tsx">
+            <h3>scroll-area.tsx</h3>
+            <p>A Shadcn UI component for creating scrollable regions with custom scrollbars.</p>
+            <h4>Functions</h4>
+            <ul><li>ScrollArea - creates a scrollable container</li><li>ScrollBar - renders the custom scrollbar</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>react</li><li>radix-ui</li><li>@/lib/utils</li></ul>
+            <hr>
+        </div>
+        
+        <div id="select-tsx">
+            <h3>select.tsx</h3>
+            <p>A Shadcn UI component providing a highly customizable select dropdown.</p>
+            <h4>Functions</h4>
+            <ul><li>Select - root select component</li><li>SelectGroup - groups select items</li><li>SelectValue - displays the selected value</li><li>SelectTrigger - the interactive element that opens the select</li><li>SelectContent - the container for select items</li><li>SelectLabel - a label for a group of items</li><li>SelectItem - an individual selectable item</li><li>SelectSeparator - a visual separator between items</li><li>SelectScrollUpButton - button to scroll up in the select content</li><li>SelectScrollDownButton - button to scroll down in the select content</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>react</li><li>radix-ui</li><li>@/lib/utils</li><li>lucide-react</li></ul>
+            <hr>
+        </div>
+        
+        <div id="separator-tsx">
+            <h3>separator.tsx</h3>
+            <p>A Shadcn UI component for rendering a visual separator.</p>
+            <h4>Functions</h4>
+            <ul><li>Separator - renders a visual separator</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>react</li><li>radix-ui</li><li>@/lib/utils</li></ul>
+            <hr>
+        </div>
+        
+        <div id="sonner-tsx">
+            <h3>sonner.tsx</h3>
+            <p>Wraps the sonner toast library with next-themes integration and custom icons.</p>
+            <h4>Functions</h4>
+            <ul><li>Toaster - configures and renders the sonner toast system</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>next-themes</li><li>sonner</li><li>lucide-react</li></ul>
+            <hr>
+        </div>
+        
+        <div id="availability-ts">
+            <h3>availability.ts</h3>
+            <p>Defines static dummy data for engineers and candidates, including their availability schedules.</p>
+            <h4>Functions</h4>
+            <ul><li>None</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>None</li></ul>
+            <hr>
+        </div>
+        
+        <div id="utils-ts">
+            <h3>utils.ts</h3>
+            <p>Provides utility functions, specifically for conditionally joining CSS class names.</p>
+            <h4>Functions</h4>
+            <ul><li>cn - conditionally joins CSS class names using clsx and tailwind-merge</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>clsx</li><li>tailwind-merge</li></ul>
+            <hr>
+        </div>
+        
+        <div id="getDays-ts">
+            <h3>getDays.ts</h3>
+            <p>Generates an array of 5 days starting from the current week's Monday.</p>
+            <h4>Functions</h4>
+            <ul><li>generateDays - calculates and returns an array of day objects</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>dayjs</li></ul>
+            <hr>
+        </div>
+        
+        <div id="getTime-ts">
+            <h3>getTime.ts</h3>
+            <p>Generates an array of 30-minute time slots from 9 AM to 6 PM.</p>
+            <h4>Functions</h4>
+            <ul><li>generateSlots - calculates and returns an array of time strings</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>dayjs</li></ul>
+            <hr>
+        </div>
+        
+        <div id="Home-tsx">
+            <h3>Home.tsx</h3>
+            <p>The main page component that renders the core application layout.</p>
+            <h4>Functions</h4>
+            <ul><li>Home - renders the Main component</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>../components/Main</li></ul>
+            <hr>
+        </div>
+        
+        <div id="useSchedulerStore-ts">
+            <h3>useSchedulerStore.ts</h3>
+            <p>Implements Zustand stores for managing global state related to candidate selection, interview confirmation, and booked slots.</p>
+            <h4>Functions</h4>
+            <ul><li>useCandidateStore - manages the selected candidate state</li><li>useConfirmStore - manages the interview confirmation details state</li><li>useBookedSlotStore - manages the booked interview slots state</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>zustand</li><li>../data/availability</li></ul>
+            <hr>
+        </div>
+        
+        <div id="availability-test-ts">
+            <h3>availability.test.ts</h3>
+            <p>Contains unit tests for the interview overlap logic.</p>
+            <h4>Functions</h4>
+            <ul><li>findOverlap - helper function to simulate overlap logic</li></ul>
+            <h4>Dependencies</h4>
+            <ul><li>None</li></ul>
+            <hr>
+        </div>
+        
+</div>
+<script>
+  function filterFiles(query) {
+    document.querySelectorAll('#sidebar a').forEach(link => {
+      link.style.display = link.textContent.toLowerCase().includes(query.toLowerCase()) ? 'block' : 'none';
+    });
+  }
+</script>
+</body>
+</html>

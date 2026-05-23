@@ -4,7 +4,7 @@ import git
 from fastapi import HTTPException
 from pathlib import Path
 
-ex = "https://github.com/oDhruvPatel/constructionsite.git"
+ex = "https://github.com/oDhruvPatel/speercheck"
 
 import os
 
@@ -26,3 +26,5 @@ def git_repository_clone(repo_url: str) -> str:
     
     except git.exc.GitCommandError as e:
         raise HTTPException(status_code=400, detail=f"Failed to clone repo: {str(e)}")
+
+git_repository_clone(ex)
