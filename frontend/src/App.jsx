@@ -42,7 +42,7 @@ function App() {
         throw new Error(`API error: ${response.status}`);
       }
 
-      setSuccess('Repository submitted successfully!')
+      setSuccess('Documentation generated successfully!')
       setUrl('')
     } catch (err) {
       console.error(err);
