@@ -1,173 +1,49 @@
-# Shipment & Fleet Tracker
+# Mixed Repository Analysis (Finance Dashboard & Billing System)
 
-## package.json
-Defines backend project metadata, scripts, and dependencies.
-
-**Functions:**
-
-**Dependencies:**
-- bcryptjs
-- cors
-- dotenv
-- express
-- jsonwebtoken
-- mongoose
-- nodemon
-
----
-
-## seed.js
-Populates the database with sample admin/viewer users and demo shipments.
-
-**Functions:**
-- seedData - populates the database with sample data
-
-**Dependencies:**
-- mongoose
-- dotenv
-- ./models/User
-- ./models/Shipment
-
----
-
-## server.js
-Main entry point for the Express backend API, sets up middleware, connects to MongoDB, and defines routes.
+## style1.css
+Defines general styles for dropdowns, navigation bars, and a central content box, specifically for the worker section of the Electricity Power Billing System.
 
 **Functions:**
 
 **Dependencies:**
-- express
-- mongoose
-- cors
-- dotenv
-- ./routes/auth
-- ./routes/shipments
-
----
-
-## auth.js
-Provides middleware functions for JWT token verification and role-based access control.
-
-**Functions:**
-- verifyToken - verifies a JWT token from the request header
-- requireAdmin - checks if the authenticated user has an 'admin' role
-
-**Dependencies:**
-- jsonwebtoken
-
----
-
-## Shipment.js
-Defines the Mongoose schema and model for shipment data.
-
-**Functions:**
-
-**Dependencies:**
-- mongoose
-
----
-
-## User.js
-Defines the Mongoose schema and model for user data, including password hashing.
-
-**Functions:**
-- userSchema.pre('save') - hashes user password before saving
-- userSchema.methods.comparePassword - compares a candidate password with the stored hash
-
-**Dependencies:**
-- mongoose
-- bcryptjs
-
----
-
-## auth.js
-Handles user authentication (registration, login) and provides current user information.
-
-**Functions:**
-- router.post('/register') - registers a new user
-- router.post('/login') - authenticates a user and returns a JWT
-- router.get('/me') - retrieves the current user's profile
-
-**Dependencies:**
-- express
-- jsonwebtoken
-- ../models/User
-- ../middleware/auth
-
----
-
-## shipments.js
-Defines API routes for managing shipments, including CRUD operations and filtering.
-
-**Functions:**
-- router.get('/') - lists all shipments with optional filters
-- router.get('/:id') - retrieves a single shipment by ID
-- router.post('/') - creates a new shipment (admin only)
-- router.put('/:id') - updates an existing shipment (admin only)
-- router.delete('/:id') - deletes a shipment (admin only)
-
-**Dependencies:**
-- express
-- ../models/Shipment
-- ../middleware/auth
-
----
-
-## angular.json
-Angular CLI configuration file for the frontend project.
-
-**Functions:**
-
-**Dependencies:**
-
----
-
-## package.json
-Defines frontend project metadata, scripts, and dependencies.
-
-**Functions:**
-
-**Dependencies:**
-- @angular/animations
-- @angular/common
-- @angular/compiler
-- @angular/core
-- @angular/forms
-- @angular/platform-browser
-- @angular/platform-browser-dynamic
-- @angular/router
-- leaflet
-- rxjs
-- tslib
-- zone.js
-- @angular-devkit/build-angular
-- @angular/cli
-- @angular/compiler-cli
-- @types/leaflet
-- typescript
-
----
-
-## tsconfig.app.json
-TypeScript configuration for the Angular application compilation.
-
-**Functions:**
-
-**Dependencies:**
-
----
-
-## tsconfig.json
-Base TypeScript configuration for the Angular project.
-
-**Functions:**
-
-**Dependencies:**
+- ../images/img11.jpeg
 
 ---
 
 ## index.html
-Main HTML file for the Angular frontend, serving as the entry point for the web application.
+Serves as the main landing page for the worker section of the Electricity Power Billing System, including navigation links and a system title.
+
+**Functions:**
+
+**Dependencies:**
+- css/style1.css
+- https://fonts.googleapis.com/css2?family=Teko&display=swap
+- https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap
+
+---
+
+## style1.css
+Defines general styles for dropdowns, navigation bars, and a central content box, specifically for the customer section of the Electricity Power Billing System.
+
+**Functions:**
+
+**Dependencies:**
+- images/img22.jpeg
+
+---
+
+## style.css
+Provides styling for the admin section of the Electricity Power Billing System, including a distinct navigation menu and background image.
+
+**Functions:**
+
+**Dependencies:**
+- ../images/img22.jpeg
+
+---
+
+## README.md
+Provides a basic introduction and setup instructions for the financemanager React + Vite project, including information on ESLint and React Compiler.
 
 **Functions:**
 
@@ -175,120 +51,68 @@ Main HTML file for the Angular frontend, serving as the entry point for the web 
 
 ---
 
-## main.ts
-Entry point for bootstrapping the Angular application.
-
-**Functions:**
-- bootstrapApplication - initializes and starts the Angular application
-
-**Dependencies:**
-- @angular/platform-browser
-- ./app/app.config
-- ./app/app.component
-
----
-
-## styles.css
-Defines global CSS styles, variables, and utility classes for the frontend application.
+## eslint.config.js
+Configures ESLint for the financemanager project, defining linting rules and environments for JavaScript and JSX files.
 
 **Functions:**
 
 **Dependencies:**
+- @eslint/js
+- globals
+- eslint-plugin-react-hooks
+- eslint-plugin-react-refresh
+- eslint/config
 
 ---
 
-## app.component.ts
-Root component of the Angular application, hosting the router outlet.
+## package.json
+Defines project metadata, scripts, and lists both runtime and development dependencies for the financemanager application.
 
 **Functions:**
 
 **Dependencies:**
-- @angular/core
-- @angular/router
+- date-fns
+- react
+- react-dom
+- react-icons
+- recharts
+- uuid
+- @eslint/js
+- @types/react
+- @types/react-dom
+- @vitejs/plugin-react
+- eslint
+- eslint-plugin-react-hooks
+- eslint-plugin-react-refresh
+- globals
+- vite
 
 ---
 
-## app.config.ts
-Configures the Angular application's providers, including routing and HTTP client with interceptors.
+## index.html
+The main HTML entry point for the financemanager React application, setting up basic metadata and linking to the main JavaScript module.
 
 **Functions:**
 
 **Dependencies:**
-- @angular/core
-- @angular/router
-- @angular/common/http
-- ./app.routes
-- ./interceptors/auth.interceptor
+- /favicon.svg
+- /src/main.jsx
 
 ---
 
-## app.routes.ts
-Defines the routing configuration for the Angular application.
+## vite.config.js
+Configures Vite for the financemanager React project, enabling the React plugin for development and build processes.
 
 **Functions:**
 
 **Dependencies:**
-- @angular/router
-- ./components/login/login.component
-- ./components/dashboard/dashboard.component
-- ./guards/auth.guard
+- vite
+- @vitejs/plugin-react
 
 ---
 
-## dashboard.component.css
-Styles for the dashboard component layout and elements.
-
-**Functions:**
-
-**Dependencies:**
-
----
-
-## dashboard.component.html
-HTML template for the dashboard component, displaying stats, map, shipment list, and form modal.
-
-**Functions:**
-- logout - logs out the user
-- onFilterChange - applies shipment status filter
-- onAddNew - opens form for new shipment creation
-- onEdit - opens form for editing a shipment
-- onDelete - deletes a shipment
-- onFormClose - closes the shipment form modal
-- onFormSaved - handles form saved event to refresh data
-
-**Dependencies:**
-
----
-
-## dashboard.component.ts
-Manages the dashboard view, including fetching and displaying shipments, stats, filtering, and CRUD operations.
-
-**Functions:**
-- ngOnInit - initializes component data by loading shipments
-- loadShipments - fetches shipments from the service and updates stats
-- calculateStats - computes shipment statistics based on current data
-- onFilterChange - updates filtered shipments based on selected status
-- onAddNew - prepares the form for creating a new shipment
-- onEdit - prepares the form for editing an existing shipment
-- onDelete - handles shipment deletion via the service
-- onFormClose - closes the shipment form modal
-- onFormSaved - reloads shipments after a form submission (create/update)
-- logout - calls the authentication service to log out the user
-
-**Dependencies:**
-- @angular/core
-- @angular/common
-- @angular/forms
-- ../../services/auth.service
-- ../../services/shipment.service
-- ../shipment-list/shipment-list.component
-- ../map/map.component
-- ../shipment-form/shipment-form.component
-
----
-
-## login.component.css
-Styles for the login and registration page.
+## App.css
+Empty file, likely a placeholder or legacy file for the financemanager project.
 
 **Functions:**
 
@@ -296,179 +120,50 @@ Styles for the login and registration page.
 
 ---
 
-## login.component.html
-HTML template for the login and registration component.
+## index.css
+Defines global CSS variables, resets, layout, and component-specific styles for the financemanager application, including responsive adjustments.
 
 **Functions:**
-- onSubmit - handles form submission for login or registration
-- toggleMode - switches between login and registration forms
 
 **Dependencies:**
+- https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap
 
 ---
 
-## login.component.ts
-Handles user login and registration logic, interacting with the authentication service.
+## storage.js
+Manages local storage interactions for the financemanager dashboard, providing CRUD operations for various data entities and user settings.
 
 **Functions:**
-- constructor - redirects to dashboard if already logged in
-- toggleMode - switches between login and registration forms
-- onSubmit - performs user login or registration
+- getItem - Retrieves and parses an item from local storage.
+- setItem - Serializes and stores an item in local storage.
+- initializeStorage - Initializes local storage with default categories and empty arrays for other data.
+- getTransactions - Retrieves all transactions.
+- addTransaction - Adds a new transaction.
+- updateTransaction - Updates an existing transaction.
+- deleteTransaction - Deletes a transaction.
+- getCategories - Retrieves all categories.
+- addCategory - Adds a new category.
+- updateCategory - Updates an existing category.
+- deleteCategory - Deletes a category.
+- getAccounts - Retrieves all accounts.
+- addAccount - Adds a new account.
+- updateAccount - Updates an existing account.
+- deleteAccount - Deletes an account.
+- getBudgets - Retrieves all budgets.
+- addBudget - Adds a new budget.
+- updateBudget - Updates an existing budget.
+- deleteBudget - Deletes a budget.
+- getGoals - Retrieves all goals.
+- addGoal - Adds a new goal.
+- updateGoal - Updates an existing goal.
+- deleteGoal - Deletes a goal.
+- getSettings - Retrieves user settings.
+- updateSettings - Updates user settings.
+- formatCurrency - Formats a number as currency.
+- resetAllData - Clears all finance data from local storage and re-initializes.
 
 **Dependencies:**
-- @angular/core
-- @angular/common
-- @angular/forms
-- @angular/router
-- ../../services/auth.service
-
----
-
-## map.component.ts
-Displays shipment locations on an interactive Leaflet map.
-
-**Functions:**
-- ngAfterViewInit - initializes the map after the view is rendered
-- ngOnChanges - updates map markers when shipments input changes
-- initMap - sets up the Leaflet map instance
-- updateMarkers - clears existing markers and adds new ones for shipments
-
-**Dependencies:**
-- @angular/core
-- @angular/common
-- ../../services/shipment.service
-- leaflet
-
----
-
-## shipment-form.component.css
-Styles for the shipment creation and editing modal form.
-
-**Functions:**
-
-**Dependencies:**
-
----
-
-## shipment-form.component.html
-HTML template for the shipment creation and editing form modal.
-
-**Functions:**
-- onClose - closes the modal
-- onSubmit - submits the shipment form
-
-**Dependencies:**
-
----
-
-## shipment-form.component.ts
-Manages the form for creating or editing shipment details.
-
-**Functions:**
-- ngOnInit - initializes form data if editing an existing shipment
-- onSubmit - handles form submission to create or update a shipment
-- onClose - emits a close event for the modal
-
-**Dependencies:**
-- @angular/core
-- @angular/common
-- @angular/forms
-- ../../services/shipment.service
-
----
-
-## shipment-list.component.css
-Styles for the shipment list table.
-
-**Functions:**
-
-**Dependencies:**
-
----
-
-## shipment-list.component.html
-HTML template for displaying a list of shipments in a table.
-
-**Functions:**
-- onEdit - emits an event to edit a specific shipment
-- onDelete - emits an event to delete a specific shipment
-
-**Dependencies:**
-
----
-
-## shipment-list.component.ts
-Displays a table of shipments and allows editing/deleting for admin users.
-
-**Functions:**
-- onEdit - emits an event to edit a shipment
-- onDelete - emits an event to delete a shipment
-
-**Dependencies:**
-- @angular/core
-- @angular/common
-- ../../services/shipment.service
-
----
-
-## auth.guard.ts
-Angular route guard to protect routes that require authentication.
-
-**Functions:**
-- authGuard - checks if a user is logged in before allowing route activation
-
-**Dependencies:**
-- @angular/core
-- @angular/router
-- ../services/auth.service
-
----
-
-## auth.interceptor.ts
-Angular HTTP interceptor to add JWT authorization token to outgoing requests.
-
-**Functions:**
-- authInterceptor - intercepts HTTP requests to add an Authorization header
-
-**Dependencies:**
-- @angular/common/http
-
----
-
-## auth.service.ts
-Provides authentication functionalities including login, registration, logout, and managing user state.
-
-**Functions:**
-- constructor - restores user from local storage on app start
-- login - authenticates a user with the backend
-- register - registers a new user with the backend
-- logout - clears user session and navigates to login
-- isLoggedIn - checks if a user token exists
-- currentUser - gets the current authenticated user object
-- isAdmin - checks if the current user has 'admin' role
-
-**Dependencies:**
-- @angular/core
-- @angular/common/http
-- rxjs
-- @angular/router
-
----
-
-## shipment.service.ts
-Provides methods for interacting with the backend API for shipment-related operations.
-
-**Functions:**
-- getShipments - fetches a list of shipments with optional filters
-- getShipment - fetches a single shipment by ID
-- createShipment - creates a new shipment
-- updateShipment - updates an existing shipment
-- deleteShipment - deletes a shipment
-
-**Dependencies:**
-- @angular/core
-- @angular/common/http
-- rxjs
+- uuid
 
 ---
 

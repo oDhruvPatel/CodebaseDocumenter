@@ -1,11 +1,22 @@
-# app/routes/repo.py
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
+
 from services.git_service import git_repository_clone
 from services.parser_service import parsing_files
 from services.chunking import devide_in_chunks
 from services.embedding import embeddings
-from services.userQuery import generate_docs, load_vector_store
+
+from services.userQuery import (
+    generate_docs,
+    load_vector_store
+)
+
+from services.s3bucket import upload_docs_to_s3
+
+import os
+import shutil
+import tempfile
+import uuid
 import traceback
 
 router = APIRouter(tags=["Repo"])
@@ -15,44 +26,99 @@ class clone_repo_request(BaseModel):
 
 @router.post("/clone-repository")
 def clone(request: clone_repo_request):
+
+    job_id = uuid.uuid4().hex
+
+    base_dir = os.path.join(
+        tempfile.gettempdir(),
+        "codebasedocumentor",
+        job_id
+    )
+
+    repo_dir = os.path.join(base_dir, "repo")
+
+    chroma_dir = os.path.join(
+        base_dir,
+        "chroma_db"
+    )
+
+    os.makedirs(repo_dir, exist_ok=True)
+    os.makedirs(chroma_dir, exist_ok=True)
+
     try:
-        # Step 1 — Clone
         print("Cloning repo...")
-        path = git_repository_clone(request.repo_url)
+
+        path = git_repository_clone(
+            request.repo_url,
+            target_dir=repo_dir
+        )
+
         print(f"Cloned to: {path}")
 
-        # Step 2 — Parse files
         print("Parsing files...")
+
         files = parsing_files(path)
+
         print(f"Found {len(files)} files")
 
         if not files:
-            raise HTTPException(status_code=400, detail="No supported files found in repo")
-
-        # Step 3 — Chunk
+            raise HTTPException(
+                status_code=400,
+                detail="No supported files found in repo"
+            )
+        
         print("Chunking...")
+
         chunks = devide_in_chunks(files)
+
         print(f"Created {len(chunks)} chunks")
 
-        # Step 4 — Embed
         print("Embedding...")
-        embeddings(chunks)
+
+        embeddings(chunks, chroma_dir)
+
         print("Embeddings stored!")
-
-        # Step 5 — Generate docs
         print("Generating docs...")
-        db = load_vector_store()
-        generate_docs(db)
-        print("Docs generated!")
 
+        db = load_vector_store(chroma_dir)
+
+        result = generate_docs(db)
+
+        if not result:
+            raise HTTPException(
+                status_code=500,
+                detail="Documentation generation failed"
+            )
+
+        print("Docs generated!")
+        print("Uploading to S3...")
+
+        uploaded_files = upload_docs_to_s3(
+            job_id,
+            result["files"]
+        )
+
+        print("Upload complete!")
         return {
             "message": "Done!",
-            "path": path,
-            "total_files": len(files),
-            "total_chunks": len(chunks),
-            "docs": "output/index.html"
+            "download_links": uploaded_files
         }
 
     except Exception as e:
-        print("ERROR:", traceback.format_exc())
-        raise HTTPException(status_code=500, detail=str(e))
+
+        print(
+            "ERROR:",
+            traceback.format_exc()
+        )
+
+        raise HTTPException(
+            status_code=500,
+            detail=str(e)
+        )
+
+    finally:
+
+        shutil.rmtree(
+            base_dir,
+            ignore_errors=True
+        )

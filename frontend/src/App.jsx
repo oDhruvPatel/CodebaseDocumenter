@@ -6,6 +6,7 @@ function App() {
   const [error, setError] = useState('')
   const [success, setSuccess] = useState('')
   const [loading, setLoading] = useState(false)
+  const [downloadLinks, setDownloadLinks] = useState([]) // ← NEW
 
   const isValidGitHubUrl = (value) => {
     const pattern = /^https?:\/\/(www\.)?github\.com\/[\w.-]+\/[\w.-]+(\/.*)?$/i
@@ -16,6 +17,7 @@ function App() {
     e.preventDefault()
     setError('')
     setSuccess('')
+    setDownloadLinks([]) // ← reset links on new request
 
     if (!url.trim()) {
       setError('Please enter a GitHub repository URL.')
@@ -30,7 +32,7 @@ function App() {
     setLoading(true)
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/clone-repository', {
+      const response = await fetch('http://100.53.35.149:8000/api/clone-repository', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -42,7 +44,10 @@ function App() {
         throw new Error(`API error: ${response.status}`);
       }
 
+      const data = await response.json() // ← parse response
+
       setSuccess('Documentation generated successfully!')
+      setDownloadLinks(data.download_links || []) // ← store links
       setUrl('')
     } catch (err) {
       console.error(err);
@@ -50,6 +55,23 @@ function App() {
     } finally {
       setLoading(false)
     }
+  }
+
+  // Helper: icon based on file type
+  const getFileIcon = (fileName) => {
+    if (fileName.endsWith('.html')) {
+      return (
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 18.178l-4.62-1.256-.328-3.544h2.27l.157 1.844 2.52.683 2.52-.683.26-2.866H6.96l-.635-6.678h11.35l-.227 2.21H8.822l.204 2.256h8.126l-.654 7.034L12 18.178z"/>
+          <path d="M3 2h18l-1.636 18L12 22l-7.364-2L3 2zm2.093 2L6.6 18.327 12 19.855l5.4-1.528L18.907 4H5.093z"/>
+        </svg>
+      )
+    }
+    return (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm4 18H6V4h7v5h5v11z"/>
+      </svg>
+    )
   }
 
   return (
@@ -66,9 +88,7 @@ function App() {
           Codebase Documenter
         </div>
 
-        <ul className="navbar__links">
-          {/* <li><a href="#home">Home</a></li> */}
-        </ul>
+        <ul className="navbar__links"></ul>
 
         <div className="navbar__socials">
           <button className="navbar__social-btn" aria-label="GitHub">
@@ -92,11 +112,8 @@ function App() {
       {/* Hero Section */}
       <section className="hero" id="hero-section">
 
-
-        {/* Title */}
         <h1 className="hero__title">Document Your Codebase</h1>
 
-        {/* Subtitle */}
         <p className="hero__subtitle">
           Paste any public GitHub repository URL and generate beautiful,
           comprehensive documentation — instantly powered by AI.
@@ -138,17 +155,45 @@ function App() {
           </div>
         </form>
 
-        {/* Error / Success */}
+        {/* Error */}
         {error && (
           <div className="hero__message hero__message--error" role="alert" id="error-message">
             {error}
           </div>
         )}
+
+        {/* Success + Download Links */}
         {success && (
           <div className="hero__message hero__message--success" role="status" id="success-message">
             {success}
           </div>
         )}
+
+        {/* Download Buttons */}
+        {downloadLinks.length > 0 && (
+          <div className="download-section">
+            <p className="download-section__label">Your documentation is ready:</p>
+            <div className="download-section__buttons">
+              {downloadLinks.map((link) => (
+                <a
+                  key={link.file_name}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="download-btn"
+                  download={link.file_name}
+                >
+                  {getFileIcon(link.file_name)}
+                  {link.file_name}
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+                  </svg>
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+
       </section>
     </div>
   )

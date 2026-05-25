@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  backend:
+    image: dhruv27323/codebasedocumentor-backend:latest
+    container_name: documenter-backend
+    ports:
+      - "8000:8000"
+    environment:
+
+
+  frontend:
+    image: dhruv27323/codebasedocumentor-frontend:latest
+    container_name: documenter-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend

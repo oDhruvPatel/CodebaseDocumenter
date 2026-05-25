@@ -7,14 +7,11 @@ load_dotenv(override=True)
 GOOGLE_API = os.getenv("GOOGLE_API_KEY")
 
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-CHROMA_PATH = os.path.abspath(os.path.join(BASE_DIR, "..", "chroma_db"))
-
 client = genai.Client(api_key=GOOGLE_API)
 
 
-def clear_embeddings():
-    chroma_client = chromadb.PersistentClient(path=CHROMA_PATH)
+def clear_embeddings(chroma_path: str):
+    chroma_client = chromadb.PersistentClient(path=chroma_path)
     try:
         collection = chroma_client.get_collection("codebase")
         existing = collection.get()
@@ -26,11 +23,11 @@ def clear_embeddings():
     except Exception as e:
         print(f"Collection doesn't exist yet: {e}")
 
-def embeddings(chunks):
+def embeddings(chunks, chroma_path: str):
 
-    clear_embeddings()
+    clear_embeddings(chroma_path)
 
-    chroma_client = chromadb.PersistentClient(path=CHROMA_PATH)
+    chroma_client = chromadb.PersistentClient(path=chroma_path)
     collection = chroma_client.get_or_create_collection(name="codebase")
 
     for chunk in chunks:
@@ -53,6 +50,6 @@ def embeddings(chunks):
                 "file_type": chunk['file_type'],
             }]
         )
-        print(f"Saved chunk {chunk['chunk_id']} to: {CHROMA_PATH}")
+        print(f"Saved chunk {chunk['chunk_id']} to: {chroma_path}")
 
     return collection

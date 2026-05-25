@@ -91,11 +91,10 @@ SUPPORTED_FILES = {
     ".java", ".cs", ".json",
     ".html", ".css", ".md"
 }
-result_files = []
-result_structure = []
 
 def parsing_files(repository_path):
-
+    result_files = []
+    result_structure = []
 
     for root, dirs, files in os.walk(repository_path):
 
