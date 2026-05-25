@@ -22,6 +22,18 @@ Codebase Documenter is an AI-powered tool that automatically generates comprehen
 - **Vector Store**: ChromaDB
 - **Tools**: GitPython (Repository Cloning), PyPDF2 (Document processing)
 
+## ☁️ AWS Infrastructure
+
+- **EC2** — Application hosted on a `t3.micro` Ubuntu instance
+- **S3** — Generated documentation files are stored and served via S3 bucket
+- **IAM** — Scoped user credentials for secure S3 access
+
+## 🐳 Docker
+
+- Frontend and backend are containerized using **Docker**
+- Orchestrated with **Docker Compose**
+- Images hosted on **Docker Hub**
+
 ## 🏗️ Architecture Pipeline
 
 1. **Clone**: The backend receives a GitHub URL and securely clones the target repository.
