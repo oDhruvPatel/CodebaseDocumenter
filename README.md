@@ -2,7 +2,7 @@
 
 Codebase Documenter is an AI-powered tool that automatically generates comprehensive documentation for any public GitHub repository. By simply pasting a repository URL, the system clones the codebase, analyzes its contents, generates vector embeddings, and produces beautiful, easily navigable documentation.
 
-## 🚀 Features
+## 🚀 Featuress
 
 - **Instant Documentation**: Generate documentation for any public GitHub repository with a single click.
 - **AI-Powered Analysis**: Utilizes LLMs (Google Gemini) and LangChain to understand code context and semantics.
